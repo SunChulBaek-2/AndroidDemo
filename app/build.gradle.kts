@@ -13,12 +13,13 @@ android {
         applicationId = "kr.pe.ssun.androiddemo"
         minSdk = Versions.MIN_SDK
         targetSdk = Versions.TARGET_SDK
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = Versions.getProperty(buildProp, "versionCode").toInt()
+        versionName = Versions.getProperty(buildProp, "versionName")
+        println("[sunchulbaek] versionCode = $versionCode")
+        println("[sunchulbaek] versionName = $versionName")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "baseUrl", "\"https://openapi.naver.com/\"")
         buildConfigField("String", "clientId", "\"${Versions.getProperty(buildProp, "clientId")}\"")
         buildConfigField("String", "clientSecret", "\"${Versions.getProperty(buildProp, "clientSecret")}\"")
     }
