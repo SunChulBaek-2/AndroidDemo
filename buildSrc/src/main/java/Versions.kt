@@ -3,6 +3,6 @@ object Versions {
     const val TARGET_SDK = 32
     const val MIN_SDK = 21
 
-    const val HILT_AGP = "2.28-alpha"
+    const val HILT_AGP = "2.42"
     const val KOTLIN = "1.7.0"
 }

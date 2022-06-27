@@ -5,7 +5,7 @@ plugins {
 
 val appCompat = "1.4.2"
 val constraintLayout = "2.1.4"
-val coreKtx = "1.7.0"
+val coreKtx = "1.8.0"
 val espressoCore = "3.4.0"
 val extJunit = "1.1.3"
 val hilt = Versions.HILT_AGP
