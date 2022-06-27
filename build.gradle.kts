@@ -14,8 +14,6 @@ plugins {
     id("org.jetbrains.kotlin.jvm") version Versions.KOTLIN apply false
 }
 
-
-
 fun isNonStable(version: String): Boolean {
     val stableKeyword = listOf("RELEASE", "FINAL", "GA").any { version.toUpperCase().contains(it) }
     val regex = "^[0-9,.v-]+(-r)?$".toRegex()

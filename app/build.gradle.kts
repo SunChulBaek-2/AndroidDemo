@@ -9,6 +9,7 @@ android {
     compileSdk = Versions.COMPILE_SDK
 
     defaultConfig {
+        val buildProp = file(rootProject.file("build.properties"))
         applicationId = "kr.pe.ssun.androiddemo"
         minSdk = Versions.MIN_SDK
         targetSdk = Versions.TARGET_SDK
@@ -16,6 +17,10 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "baseUrl", "\"https://openapi.naver.com/\"")
+        buildConfigField("String", "clientId", "\"${Versions.getProperty(buildProp, "clientId")}\"")
+        buildConfigField("String", "clientSecret", "\"${Versions.getProperty(buildProp, "clientSecret")}\"")
     }
 
     buildTypes {
@@ -23,6 +28,9 @@ android {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
+    }
+    buildFeatures {
+        viewBinding = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -40,13 +48,28 @@ dependencies {
 
     implementation(Libs.CORE_KTX)
     implementation(Libs.APPCOMPAT)
+    implementation(Libs.FRAGMENT_KTX)
     implementation(Libs.MATERIAL)
     implementation(Libs.CONSTRAINT_LAYOUT)
     implementation(Libs.LIFECYCLE_LIVEDATA_KTX)
     implementation(Libs.LIFECYCLE_VIEWMODEL_KTX)
+
+    // Coil
+    implementation(Libs.COIL)
+
+    // Hilt
     implementation(Libs.HILT_ANDROID)
     kapt(Libs.HILT_COMPILER)
+
+
+    // Retrofit
+    implementation(Libs.RETROFIT)
+    implementation(Libs.RETROFIT_GSON_CONVERTER)
+    implementation(Libs.OKHTTP_LOGGING_INTERCEPTOR)
+
+    // Timber
     implementation(Libs.TIMBER)
+
     testImplementation(Libs.JUNIT)
     androidTestImplementation(Libs.EXT_JUNIT)
     androidTestImplementation(Libs.ESPRESSO_CORE)
