@@ -12,6 +12,8 @@ object Libs {
     const val LIFECYCLE_LIVEDATA_KTX = "androidx.lifecycle:lifecycle-livedata-ktx"
     const val LIFECYCLE_VIEWMODEL_KTX = "androidx.lifecycle:lifecycle-viewmodel-ktx"
     const val MATERIAL = "com.google.android.material:material"
+    const val NAVIGATION_FRAGMENT_KTX = "androidx.navigation:navigation-fragment-ktx"
+    const val NAVIGATION_UI_KTX = "androidx.navigation:navigation-ui-ktx"
     const val OKHTTP_LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor"
     const val RETROFIT = "com.squareup.retrofit2:retrofit"
     const val RETROFIT_GSON_CONVERTER = "com.squareup.retrofit2:converter-gson"

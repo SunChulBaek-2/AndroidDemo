@@ -7,18 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import kr.pe.ssun.androiddemo.R
 import kr.pe.ssun.androiddemo.databinding.FragmentMainBinding
 
 @AndroidEntryPoint
 class MainFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = MainFragment()
-    }
 
     private lateinit var binding: FragmentMainBinding
     private val viewModel by viewModels<MainViewModel>()
@@ -26,12 +24,16 @@ class MainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
+        val navController = findNavController()
         binding = FragmentMainBinding.inflate(inflater, container, false).apply {
             btn.setOnClickListener {
                 viewModel.getShop(et.text.toString())
                 et.text = null
             }
-            rv.adapter = ShopAdapter()
+            rv.adapter = ShopAdapter { url ->
+                val action = MainFragmentDirections.actionSearchToWebview(url)
+                navController.navigate(directions = action)
+            }
             rv.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         }
         setObservers()

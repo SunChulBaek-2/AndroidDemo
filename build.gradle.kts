@@ -3,6 +3,7 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 buildscript {
     dependencies {
         classpath("com.google.dagger:hilt-android-gradle-plugin:${Versions.HILT_AGP}")
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.NAVIGATION}")
     }
 }
 

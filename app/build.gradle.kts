@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -52,8 +53,14 @@ dependencies {
     implementation(Libs.FRAGMENT_KTX)
     implementation(Libs.MATERIAL)
     implementation(Libs.CONSTRAINT_LAYOUT)
+
+    // Lifecycle
     implementation(Libs.LIFECYCLE_LIVEDATA_KTX)
     implementation(Libs.LIFECYCLE_VIEWMODEL_KTX)
+
+    // Navigation
+    implementation(Libs.NAVIGATION_FRAGMENT_KTX)
+    implementation(Libs.NAVIGATION_UI_KTX)
 
     // Coil
     implementation(Libs.COIL)
@@ -61,7 +68,6 @@ dependencies {
     // Hilt
     implementation(Libs.HILT_ANDROID)
     kapt(Libs.HILT_COMPILER)
-
 
     // Retrofit
     implementation(Libs.RETROFIT)

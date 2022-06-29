@@ -14,6 +14,7 @@ val hilt = Versions.HILT_AGP
 val junit = "4.13.2"
 val lifecycle = "2.4.1"
 val material = "1.6.1"
+val navigation = Versions.NAVIGATION
 val okhttp = "4.9.2"
 val retrofit = "2.9.0"
 val timber = "5.0.1"
@@ -33,6 +34,8 @@ dependencies {
         api("${Libs.LIFECYCLE_LIVEDATA_KTX}:$lifecycle")
         api("${Libs.LIFECYCLE_VIEWMODEL_KTX}:$lifecycle")
         api("${Libs.MATERIAL}:$material")
+        api("${Libs.NAVIGATION_FRAGMENT_KTX}:$navigation")
+        api("${Libs.NAVIGATION_UI_KTX}:$navigation")
         api("${Libs.OKHTTP_LOGGING_INTERCEPTOR}:$okhttp")
         api("${Libs.RETROFIT}:$retrofit")
         api("${Libs.RETROFIT_GSON_CONVERTER}:$retrofit")

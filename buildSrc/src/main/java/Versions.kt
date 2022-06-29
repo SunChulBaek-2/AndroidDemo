@@ -12,4 +12,5 @@ object Versions {
 
     const val HILT_AGP = "2.42"
     const val KOTLIN = "1.7.0"
+    const val NAVIGATION = "2.4.2"
 }
