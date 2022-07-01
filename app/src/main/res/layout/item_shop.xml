@@ -16,6 +16,17 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/ic_launcher_background" />
 
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/cpi"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:indeterminate="true"
+        app:indicatorColor="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@id/iv"
+        app:layout_constraintEnd_toEndOf="@id/iv"
+        app:layout_constraintStart_toStartOf="@id/iv"
+        app:layout_constraintTop_toTopOf="@id/iv" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvTitle"
         android:layout_width="0dp"

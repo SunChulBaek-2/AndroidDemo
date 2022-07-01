@@ -2,11 +2,13 @@ package kr.pe.ssun.androiddemo.ui.main
 
 import android.text.Html
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
+import coil.Coil
+import coil.request.ImageRequest
 import kr.pe.ssun.androiddemo.data.model.ShopItem
 import kr.pe.ssun.androiddemo.databinding.ItemShopBinding
 
@@ -29,7 +31,19 @@ class ShopViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(item: ShopItem, onClick: (String)->Unit) {
-        binding.iv.load(item.image)
+        val request = ImageRequest.Builder(binding.root.context)
+            .data(item.image)
+            .listener(
+                onStart = {
+                    binding.cpi.visibility = View.VISIBLE
+                },
+                onSuccess = { _, _ ->
+                    binding.cpi.visibility = View.GONE
+                }
+            )
+            .target(binding.iv)
+            .build()
+        Coil.imageLoader(binding.root.context).enqueue(request)
         binding.tvTitle.text = Html.fromHtml(item.title, Html.FROM_HTML_MODE_COMPACT)
         binding.root.setOnClickListener {
             onClick.invoke(item.link)
