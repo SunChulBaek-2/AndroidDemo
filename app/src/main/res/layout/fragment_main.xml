@@ -15,7 +15,11 @@
             android:id="@+id/et"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:lines="1"
+            android:paddingStart="10dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn"
