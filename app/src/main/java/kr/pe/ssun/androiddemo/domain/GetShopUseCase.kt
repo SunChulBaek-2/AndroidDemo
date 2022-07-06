@@ -1,10 +1,10 @@
-package kr.pe.ssun.androiddemo.data.domain.usecase
+package kr.pe.ssun.androiddemo.domain.usecase
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kr.pe.ssun.androiddemo.data.ShopRepository
-import kr.pe.ssun.androiddemo.data.domain.FlowUseCase
+import kr.pe.ssun.androiddemo.domain.FlowUseCase
 import kr.pe.ssun.androiddemo.data.model.ShopItem
 import kr.pe.ssun.androiddemo.di.IoDispatcher
 import javax.inject.Inject

@@ -1,4 +1,4 @@
-package kr.pe.ssun.androiddemo.data.domain
+package kr.pe.ssun.androiddemo.domain
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow

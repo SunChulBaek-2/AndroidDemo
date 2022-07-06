@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kr.pe.ssun.androiddemo.data.domain.usecase.GetShopParam
-import kr.pe.ssun.androiddemo.data.domain.usecase.GetShopUseCase
+import kr.pe.ssun.androiddemo.domain.usecase.GetShopParam
+import kr.pe.ssun.androiddemo.domain.usecase.GetShopUseCase
 import kr.pe.ssun.androiddemo.data.model.ShopItem
 import kr.pe.ssun.androiddemo.util.onMain
 import javax.inject.Inject
